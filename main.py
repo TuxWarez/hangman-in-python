@@ -1,0 +1,67 @@
+import os
+import random
+lives = ['oooooo', 'ooooo', 'oooo', 'ooo', 'oo', 'o']
+word_list = ['able', 'about', 'account', 'acid' ,'across' ,'addition' ,'adjustment', 'advertisement', 'after', 'again', 'against', 'agreement', 'almost', 'among', 'amount', 'amusement', 'angle', 'angry', 'animal', 'answer', 'apparatus', 'apple', 'approval', 'arch', 'argument', 'army', 'attack', 'attempt', 'attention', 'authority', 'automatic', 'awake', 'baby', 'back', 'balance', 'ball', 'band', 'base', 'basin', 'basket', 'bath', 'beautiful', 'because', 'before', 'behaviour', 'belief', 'bell', 'bent', 'berry', 'between', 'bird', 'birth', 'bite', 'bitter', 'black', 'blade', 'blood', 'blow', 'blue', 'board', 'boat', 'body', 'boiling', 'bone', 'book', 'boot', 'bottle', 'brain', 'brake', 'branch', 'brass', 'bread', 'breath', 'brick', 'bridge', 'bright', 'broken', 'brother', 'brown', 'brush', 'bucket', 'building', 'bulb', 'burn', 'burst', 'business', 'butter', 'button', 'cake', 'camera', 'canvas', 'card', 'care', 'carriage', 'cart', 'cause', 'certain', 'chain', 'chalk', 'chance', 'change', 'cheap', 'cheese', 'chemical', 'chest', 'chief', 'chin', 'church', 'circle', 'clean', 'clear', 'clock', 'cloth', 'cloud', 'coal', 'coat', 'cold', 'collar', 'colour', 'comb', 'comfort', 'committee', 'common', 'company', 'comparison', 'competition', 'complete', 'complex', 'condition', 'connection', 'conscious', 'control', 'cook', 'copper', 'copy', 'cord', 'cork', 'cotton', 'cough', 'country', 'cover', 'cow', 'crack', 'credit', 'crime', 'cruel', 'crush', 'current', 'curtain', 'curve', 'cushion', 'damage', 'danger', 'dark', 'daughter', 'dead', 'dear', 'death', 'debt', 'decision', 'deep', 'degree', 'delicate', 'dependent', 'design', 'desire', 'destruction', 'detail', 'development', 'different', 'digestion', 'direction', 'dirty', 'discovery', 'discussion', 'disease', 'disgust', 'distance', 'distribution', 'division', 'door', 'doubt', 'down', 'drain', 'drawer', 'dress', 'drink', 'driving', 'drop', 'dust', 'early', 'earth', 'east', 'edge', 'education', 'effect', 'egg', 'elastic', 'electric', 'engine', 'enough', 'equal', 'error', 'even', 'event', 'ever', 'every', 'example', 'exchange', 'existence', 'expansion', 'experience', 'expert', 'face', 'fact', 'fall', 'false', 'family', 'farm', 'father', 'fear', 'feather', 'feeble', 'feeling', 'female', 'fertile', 'fiction', 'field', 'fight', 'finger', 'fire', 'first', 'fish', 'fixed', 'flag', 'flame', 'flat', 'flight', 'floor', 'flower', 'fold', 'food', 'foolish', 'foot', 'force', 'fork', 'form', 'forward', 'fowl', 'frame', 'free', 'frequent', 'friend', 'from', 'front', 'fruit', 'full', 'future', 'garden', 'general', 'girl', 'give', 'glass', 'glove', 'gold', 'good', 'government', 'grain', 'grass', 'great', 'green', 'grey', 'grip', 'group', 'growth', 'guide', 'hair', 'hammer', 'hand', 'hanging', 'happy', 'harbour', 'hard', 'harmony', 'hate', 'have', 'head', 'healthy', 'hear', 'hearing', 'heart', 'heat', 'help', 'high', 'history', 'hole', 'hollow', 'hook', 'hope', 'horn', 'horse', 'hospital', 'hour', 'house', 'humour', 'idea', 'important', 'impulse', 'increase', 'industry', 'insect', 'instrument', 'insurance', 'interest', 'invention', 'iron', 'island', 'jelly', 'jewel', 'join', 'journey', 'judge', 'jump', 'keep', 'kettle', 'kick', 'kind', 'kiss', 'knee', 'knife', 'knot', 'knowledge', 'land', 'language', 'last', 'late', 'laugh', 'lead', 'leaf', 'learning', 'leather', 'left', 'letter', 'level', 'library', 'lift', 'light', 'like', 'limit', 'line', 'linen', 'liquid', 'list', 'little', 'living', 'lock', 'long', 'look', 'loose', 'loss', 'loud', 'love', 'machine', 'make', 'male', 'manager', 'mark', 'market', 'married', 'mass', 'match', 'material', 'meal', 'measure', 'meat', 'medical', 'meeting', 'memory', 'metal', 'middle', 'military', 'milk', 'mind', 'mine', 'minute', 'mist', 'mixed', 'money', 'monkey', 'month', 'moon', 'morning', 'mother', 'motion', 'mountain', 'mouth', 'move', 'much', 'muscle', 'music', 'nail', 'name', 'narrow', 'nation', 'natural', 'near', 'necessary', 'neck', 'need', 'needle', 'nerve', 'news', 'night', 'noise', 'normal', 'north', 'nose', 'note', 'number', 'observation', 'offer', 'office', 'only', 'open', 'operation', 'opinion', 'opposite', 'orange', 'order', 'organization', 'ornament', 'other', 'oven', 'over', 'owner', 'page', 'pain', 'paint', 'paper', 'parallel', 'parcel', 'part', 'past', 'paste', 'payment', 'peace', 'pencil', 'person', 'physical', 'picture', 'pipe', 'plane', 'plant', 'plate', 'play', 'please', 'pleasure', 'plough', 'pocket', 'point', 'poison', 'polish', 'political', 'poor', 'porter', 'position', 'possible', 'potato', 'powder', 'power', 'present', 'price', 'print', 'prison', 'private', 'probable', 'process', 'produce', 'profit', 'property', 'prose', 'protest', 'public', 'pull', 'pump', 'punishment', 'purpose', 'push', 'quality', 'question', 'quick', 'quiet', 'quite', 'rail', 'rain', 'range', 'rate', 'reaction', 'reading', 'ready', 'reason', 'receipt', 'record', 'regret', 'regular', 'relation', 'religion', 'representative', 'request', 'respect', 'rest', 'reward', 'rhythm', 'rice', 'right', 'ring', 'river', 'road', 'roll', 'roof', 'room', 'root', 'rough', 'round', 'rule', 'safe', 'sail', 'salt', 'same', 'sand', 'scale', 'school', 'science', 'scissors', 'screw', 'seat', 'second', 'secret', 'secretary', 'seed', 'selection', 'self', 'send', 'sense', 'separate', 'serious', 'servant', 'shame', 'sharp', 'sheep', 'shelf', 'ship', 'shirt', 'shock', 'shoe', 'short', 'shut', 'side', 'sign', 'silk', 'silver', 'simple', 'sister', 'size', 'skin', 'skirt', 'sleep', 'slip', 'slope', 'slow', 'small', 'smash', 'smell', 'smile', 'smoke', 'smooth', 'snake', 'sneeze', 'snow', 'soap', 'society', 'sock', 'soft', 'solid', 'some', 'song', 'sort', 'sound', 'soup', 'south', 'space', 'spade', 'special', 'sponge', 'spoon', 'spring', 'square', 'stage', 'stamp', 'star', 'start', 'statement', 'station', 'steam', 'steel', 'stem', 'step', 'stick', 'sticky', 'still', 'stitch', 'stocking', 'stomach', 'stone', 'stop', 'store', 'story', 'straight', 'strange', 'street', 'stretch', 'strong', 'structure', 'substance', 'such', 'sudden', 'sugar', 'suggestion', 'summer', 'support', 'surprise', 'sweet', 'swim', 'system', 'table', 'tail', 'take', 'talk', 'tall', 'taste', 'teaching', 'tendency', 'test', 'than', 'that', 'then', 'theory', 'there', 'thick', 'thin', 'thing', 'this', 'thought', 'thread', 'throat', 'through', 'through', 'thumb', 'thunder', 'ticket', 'tight', 'till', 'time', 'tired', 'together', 'tomorrow', 'tongue', 'tooth', 'touch', 'town', 'trade', 'train', 'transport', 'tray', 'tree', 'trick', 'trouble', 'trousers', 'true', 'turn', 'twist', 'umbrella', 'under', 'unit', 'value', 'verse', 'very', 'vessel', 'view', 'violent', 'voice', 'waiting', 'walk', 'wall', 'warm', 'wash', 'waste', 'watch', 'water', 'wave', 'weather', 'week', 'weight', 'well', 'west', 'wheel', 'when', 'where', 'while', 'whip', 'whistle', 'white', 'wide', 'will', 'wind', 'window', 'wine', 'wing', 'winter', 'wire', 'wise', 'with', 'woman', 'wood', 'wool', 'word', 'work', 'worm', 'wound', 'writing', 'wrong', 'year', 'yellow', 'yesterday', 'young']
+
+letters_not_in_word = []
+letters_in_word = []
+
+word_check = 0
+lives_int = 0
+
+def check_letter(let):
+    global lives_int
+    for i in word:
+        if i == let:
+            letters_in_word.append(let)
+            return
+    lives_int += 1
+    letters_not_in_word.append(let)
+
+def print_word():
+    for i in word:
+        if i in letters_in_word:
+            print(i, end='')
+        else:
+            print('_', end='')
+    print()
+
+def print_letters_not_in_word():
+    for i in letters_not_in_word:
+        print(f'{i}, ', end='')
+    print()
+
+def play_game():
+    global lives
+    global letters_in_word
+    global letters_not_in_word
+    global word_list
+    global word
+    word = random.choice(word_list)
+    lives = ['oooooo', 'ooooo', 'oooo', 'ooo', 'oo', 'o']
+    letter = input("input a letter: ")
+    if len(letter) > 1 or letter in letters_not_in_word or letter in letters_in_word:
+        print("Try again;")
+        play_game()
+    check_letter(letter)
+    os.system('clear')
+    print(lives[lives_int])
+    print_word()
+    print_letters_not_in_word()
+    word_check = 0
+    for i in word:
+        if i in letters_in_word:
+            word_check += 1
+    if lives_int == 6:
+        return 2
+    if word_check == len(word):
+        return 1
+
+while True:
+    game_over = play_game()
+    if game_over == 1:
+        print("You won")
+        break
+    if game_over == 2:
+        print("You lost")
+        break
