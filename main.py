@@ -21,9 +21,9 @@ def check_letter(let):
 def print_word():
     for i in word:
         if i in letters_in_word:
-            print(i, end='')
+            print(i, end=' ')
         else:
-            print('_', end='')
+            print('_', end=' ')
     print()
 
 def print_letters_not_in_word():
