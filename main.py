@@ -55,22 +55,19 @@ def play_game():
     if word_check == len(word):
         return 1
 
-word = random.choice(word_list)
 def main():
-    game_over = play_game()
-    if game_over == 1:
-        print("You won")
-        return
-    if game_over == 2:
-        print("You lost")
-        print(f"The word was: {word}")
-        return
+    while True:
+        game_over = play_game()
+        if game_over == 1:
+            print("You won")
+            return
+        if game_over == 2:
+            print("You lost")
+            print(f"The word was: {word}")
+            return
 
 while True:
     word = random.choice(word_list)
-    while True:
-        main()
-        if input("Do you want to play another game? [y/N] ") == "y":
-            break
-    if input("Confirm it [y/N)") != y:
+    main()
+    if input("Do you want to play another game? [y/N] ") == "y":
         break
