@@ -37,14 +37,12 @@ def play_game():
     global letters_not_in_word
     global word_list
     global word
-    word = random.choice(word_list)
     lives = ['oooooo', 'ooooo', 'oooo', 'ooo', 'oo', 'o']
     letter = input("input a letter: ")
     if len(letter) > 1 or letter in letters_not_in_word or letter in letters_in_word:
         print("Try again;")
         play_game()
     check_letter(letter)
-    os.system('clear')
     print(lives[lives_int])
     print_word()
     print_letters_not_in_word()
@@ -57,11 +55,22 @@ def play_game():
     if word_check == len(word):
         return 1
 
-while True:
+word = random.choice(word_list)
+def main():
     game_over = play_game()
     if game_over == 1:
         print("You won")
-        break
+        return
     if game_over == 2:
         print("You lost")
+        print(f"The word was: {word}")
+        return
+
+while True:
+    word = random.choice(word_list)
+    while True:
+        main()
+        if input("Do you want to play another game? [y/N] ") == "y":
+            break
+    if input("Confirm it [y/N)") != y:
         break
