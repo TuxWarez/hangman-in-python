@@ -28,7 +28,7 @@ def print_word():
 
 def print_letters_not_in_word():
     for i in letters_not_in_word:
-        print(f'{i}, ', end='')
+        print(f'{i.upper()}, ', end='')
     print()
 
 def play_game():
@@ -38,7 +38,7 @@ def play_game():
     global word_list
     global word
     lives = ['oooooo', 'ooooo', 'oooo', 'ooo', 'oo', 'o']
-    letter = input("input a letter: ")
+    letter = input("input a letter: ").lower()
     if len(letter) > 1 or letter in letters_not_in_word or letter in letters_in_word:
         print("Try again;")
         play_game()
