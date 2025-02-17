@@ -69,5 +69,5 @@ def main():
 while True:
     word = random.choice(word_list)
     main()
-    if input("Do you want to play another game? [y/N] ") == "y":
+    if input("Do you want to play another game? [y/N] ") != "y":
         break
